@@ -1,11 +1,27 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
+import { MenuComponent } from './menu/menu.component';
+import { RedirectComponent } from './redirect/redirect.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'menu',
+    pathMatch: 'full',
+  },
+  {
+    path: 'menu',
+    component: MenuComponent,
+  },
+  {
+    path: 'redirect/:id',
+    component: RedirectComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

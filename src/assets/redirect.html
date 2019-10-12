@@ -17,6 +17,7 @@
       });
       console.log(querys);
 
+      // 値設定
       querys.forEach((query) => {
         if (query.key === 'id' || query.key === 'name') {
           document.getElementById(query.key).textContent = query.value;
