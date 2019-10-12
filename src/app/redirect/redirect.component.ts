@@ -18,4 +18,17 @@ export class RedirectComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id') as string;
     this.form.setValue({ id: this.id });
   }
+
+  submit(): void {
+    const f = document.createElement('form');
+    f.action = './assets/redirect.html';
+    f.method = 'GET';
+    const hidden = document.createElement('input');
+    hidden.type = 'hidden';
+    hidden.name = 'id';
+    hidden.value = this.id;
+    f.append(hidden);
+    document.body.append(f);
+    f.submit();
+  }
 }
