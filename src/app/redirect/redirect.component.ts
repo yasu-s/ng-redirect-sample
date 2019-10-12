@@ -1,22 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-redirect',
   templateUrl: './redirect.component.html',
 })
-export class RedirectComponent implements OnInit {
+export class RedirectComponent implements OnInit, AfterViewInit {
   id = '';
-  form = new FormGroup({
-    id: new FormControl(),
-  });
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id') as string;
-    this.form.setValue({ id: this.id });
+  }
+
+  ngAfterViewInit(): void {
+    this.submit();
   }
 
   submit(): void {
