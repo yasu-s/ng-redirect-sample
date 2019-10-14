@@ -1,6 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { MenuComponent } from './menu/menu.component';
@@ -12,8 +11,7 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent, FormPostComponent, MenuComponent, RedirectComponent],
-  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
-  providers: [],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

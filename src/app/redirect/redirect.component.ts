@@ -18,11 +18,12 @@ export class RedirectComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.id = this.route.snapshot.paramMap.get('id') as string;
+    this.cd.detectChanges();
+
     this.redirectService.getMappings(this.id).subscribe((data) => {
       this.postData = data;
       this.postData['id'] = this.id;
       this.cd.detectChanges();
-
       this.callSubmit.next();
     });
   }

@@ -20,7 +20,7 @@
       // 値設定
       querys.forEach((query) => {
         if (query.key === 'id' || query.key === 'name' || query.key === 'age' || query.key === 'memo') {
-          document.getElementById(query.key).textContent = query.value;
+          document.getElementById(query.key).textContent = decodeURIComponent(query.value);
         }
       });
     };
