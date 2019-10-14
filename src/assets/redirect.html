@@ -19,7 +19,7 @@
 
       // 値設定
       querys.forEach((query) => {
-        if (query.key === 'id' || query.key === 'name' || query.key === 'age' || query.key === 'memo') {
+        if (query.key === 'id' || query.key === 'name' || query.key === 'memo') {
           document.getElementById(query.key).textContent = query.value;
         }
       });
@@ -30,9 +30,8 @@
   <ul>
     <li>ID:<span id="id"></span></li>
     <li>Name:<span id="name"></span></li>
-    <li>Age:<span id="age"></span></li>
     <li>Memo:<span id="memo"></span></li>
-    <li><a href="../../">back</a></li>
   </ul>
+  <a href="../">back</a>
 </body>
 </html>
