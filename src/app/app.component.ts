@@ -11,7 +11,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
   `,
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild('f', { static: false }) form: ElementRef<HTMLFormElement> | undefined = undefined;
+  @ViewChild('f', { static: false }) form: ElementRef<HTMLFormElement>;
 
   data = {
     id: '1',
@@ -20,9 +20,6 @@ export class AppComponent implements AfterViewInit {
   };
 
   ngAfterViewInit(): void {
-    if (!this.form) {
-      return;
-    }
     this.form.nativeElement.submit();
   }
 }
