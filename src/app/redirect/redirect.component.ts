@@ -21,8 +21,7 @@ export class RedirectComponent implements AfterViewInit {
     this.cd.detectChanges();
 
     this.redirectService.getMappings(this.id).subscribe((data) => {
-      this.postData = data;
-      this.postData['id'] = this.id;
+      this.postData = { ...data, id: this.id };
       this.cd.detectChanges();
       this.callSubmit.next();
     });

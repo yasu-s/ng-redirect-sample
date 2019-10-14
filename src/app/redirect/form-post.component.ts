@@ -5,7 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-form-post',
   templateUrl: './form-post.component.html',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormPostComponent implements OnDestroy {
   @ViewChild('form', { static: false }) form: ElementRef<HTMLFormElement> | undefined = undefined;
