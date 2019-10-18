@@ -1,4 +1,4 @@
-<form #form [action]="action" type="GET">
+<form #form [action]="action" method="GET">
   <ng-container *ngFor="let key of postDataKeys">
     <input type="hidden" [name]="key" [value]="postData[key]" />
   </ng-container>
